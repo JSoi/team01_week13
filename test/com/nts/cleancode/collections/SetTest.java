@@ -63,7 +63,7 @@ public class SetTest {
 		assertEquals(3, manyElement.size());
 		manyElement.remove("sasha");
 		assertEquals(2, manyElement.size());
-		assertEquals("tracy", manyElement.getElementAt(1));
+		assertEquals("tracy", manyElement.get(1));
 	}
 
 	@Test
@@ -82,7 +82,7 @@ public class SetTest {
 
 	@Test
 	public void addAllWithDuplicates() {
-		Set newSet = new Set();
+		AbstractCollection newSet = new Set();
 		newSet.add("josh");
 		manyElement.addAll(newSet);
 		assertEquals(2, manyElement.size());
@@ -98,7 +98,7 @@ public class SetTest {
 
 	@Test(expected = ArrayIndexOutOfBoundsException.class)
 	public void getWhenIndexOutOfBounds() {
-		empty.getElementAt(12);
+		empty.get(12);
 	}
 
 	@Test
